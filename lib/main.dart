@@ -6,6 +6,7 @@ import 'providers/ProductProvider.dart';
 import 'providers/billItem.dart';
 
 import 'screens/userScreen.dart';
+import 'screens/shopInfo.dart';
 
 void main() => runApp(MyApp());
 
