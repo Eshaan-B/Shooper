@@ -5,6 +5,12 @@ import 'product.dart';
 
 class ProductProvider with ChangeNotifier {
   List<Product> _productItems = [
+    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
+    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
+    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
+    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
+    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
+    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
   ];
   List<BillItem> _billItems = [
     BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
