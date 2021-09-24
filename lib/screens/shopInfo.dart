@@ -16,12 +16,14 @@ class User {
 }
 
 class ShopInfo extends StatefulWidget {
+  static const routeName="/shopInfo";
+
   @override
   State<StatefulWidget> createState() {
     // ignore: todo
     //TODO : ADD logic to put in values
     var owner = User('shop_keeper', '0123456789', 'user@shop.com',
-        'assets/default_userIcon');
+        'assets/default_userIcon.png');
     // ignore: no_logic_in_create_state, prefer_const_constructors
     return ShopInfoState(true, owner);
   }

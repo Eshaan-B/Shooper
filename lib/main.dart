@@ -5,7 +5,7 @@ import 'providers/product.dart';
 import 'providers/ProductProvider.dart';
 import 'providers/billItem.dart';
 
-import 'screens/userScreen.dart';
+import 'screens/shopInfo.dart';
 import 'screens/shopInfo.dart';
 
 void main() => runApp(MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(routes: {
-        '/': (ctx) => UserScreen(),
+        '/': (ctx) => ShopInfo(),
       }),
     );
   }
