@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'TabsScreen.dart';
 
 class SplashScreen extends StatefulWidget {
-  static const routeName = '/userScreen';
+  static const routeName = '/splashScreen';
+
   @override
   _UserScreenState createState() => _UserScreenState();
 }
 
 class _UserScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(seconds: 3),
+        () => Navigator.of(context).pushReplacementNamed(TabsScreen.routeName));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
