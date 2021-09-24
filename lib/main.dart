@@ -6,7 +6,7 @@ import 'providers/ProductProvider.dart';
 import 'providers/billItem.dart';
 
 import 'screens/shopInfo.dart';
-import 'screens/shopInfo.dart';
+import 'screens/splashScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,9 +19,12 @@ class MyApp extends StatelessWidget {
           create: (ctx) => ProductProvider(),
         ),
       ],
-      child: MaterialApp(routes: {
-        '/': (ctx) => ShopInfo(),
-      }),
+      child: MaterialApp(
+        home: SplashScreen(),
+        routes: {
+          ShopInfo.routeName: (ctx) => ShopInfo(),
+        },
+      ),
     );
   }
 }
