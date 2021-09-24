@@ -4,11 +4,23 @@ import 'billItem.dart';
 import 'product.dart';
 
 class ProductProvider with ChangeNotifier {
-  List<Product> _productItems = [];
-  List<BillItem> _billItems = [];
+  List<Product> _productItems = [
+  ];
+  List<BillItem> _billItems = [
+    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
+    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
+    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
+    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
+    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
 
-  List<Product> get items {
+  ];
+
+  List<Product> get productItems {
     return [..._productItems];
+  }
+
+  List<BillItem> get billItems {
+    return [..._billItems];
   }
 
   //##############  PRODUCTS  ###################################

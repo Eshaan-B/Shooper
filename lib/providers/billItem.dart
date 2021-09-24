@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 
 
 class BillItem with ChangeNotifier {
-  String? id;
+  String? id; //barcode result
   String? name;
   double? price;
   int? quantity;
