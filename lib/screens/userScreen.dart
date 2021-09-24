@@ -11,22 +11,7 @@ class _UserScreenState extends State<UserScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image(
-              image: AssetImage('assets/local-shop.png'),
-            ),
-            Text(
-              'Shooper App',
-              style: TextStyle(
-                fontSize: 28,
-                fontFamily: 'sans-serif',
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
+        child: Text("Test"),
       ),
     );
   }
