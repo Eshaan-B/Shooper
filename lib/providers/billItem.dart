@@ -1,7 +1,5 @@
 import 'package:flutter/foundation.dart';
 
-import 'ProductProvider.dart';
-import 'product.dart';
 
 class BillItem with ChangeNotifier {
   String? id;

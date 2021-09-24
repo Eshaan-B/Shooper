@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'providers/product.dart';
 import 'providers/ProductProvider.dart';
-import 'providers/billItem.dart';
 
 import 'screens/shopInfo.dart';
-import 'screens/splashScreen.dart';
+import 'screens/SplashScreen.dart';
+import 'screens/BillingScreen.dart';
+import 'screens/StockScreen.dart';
+import 'screens/TabsScreen.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,6 +24,10 @@ class MyApp extends StatelessWidget {
         home: SplashScreen(),
         routes: {
           ShopInfo.routeName: (ctx) => ShopInfo(),
+          TabsScreen.routeName: (ctx) => TabsScreen(),
+          BillingScreen.routeName: (ctx) => BillingScreen(),
+          StockScreen.routeName: (ctx) => StockScreen(),
+
         },
       ),
     );

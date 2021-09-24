@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'shopInfo.dart';
+import 'TabsScreen.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = '/splashScreen';
@@ -13,10 +13,9 @@ class SplashScreen extends StatefulWidget {
 class _UserScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 4),
-        () => Navigator.of(context).pushReplacementNamed(ShopInfo.routeName));
+    Timer(Duration(seconds: 3),
+        () => Navigator.of(context).pushReplacementNamed(TabsScreen.routeName));
   }
 
   @override
