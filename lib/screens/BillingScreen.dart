@@ -59,6 +59,7 @@ class _BillingScreenState extends State<BillingScreen> {
             child: Align(
               alignment: Alignment.bottomLeft,
               child: FloatingActionButton(
+                heroTag: 'AddBillItem',
                 onPressed: () => print('add'),
                 child: const Icon(Icons.add),
                 backgroundColor: Colors.green,
@@ -68,6 +69,7 @@ class _BillingScreenState extends State<BillingScreen> {
           Align(
             alignment: Alignment.bottomRight,
             child: FloatingActionButton(
+              heroTag: 'PlaceOrder',
               onPressed: () => print('Buy'),
               child: const Icon(Icons.shopping_cart),
               backgroundColor: Colors.green,
