@@ -10,6 +10,9 @@ import 'screens/StockScreen.dart';
 import 'screens/AddProduct.dart';
 import 'screens/TabsScreen.dart';
 
+//TODO:for testing purpose
+import 'screens/Test-ListView.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -37,7 +40,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: MaterialColor(0xff1a1c20, color),
           accentColor: MaterialColor(0xfff9813a, color),
-
         ),
         home: SplashScreen(),
         routes: {
@@ -46,7 +48,6 @@ class MyApp extends StatelessWidget {
           BillingScreen.routeName: (ctx) => BillingScreen(),
           StockScreen.routeName: (ctx) => StockScreen(),
           AddProduct.routeName:(ctx)=>AddProduct(),
-
         },
       ),
     );
