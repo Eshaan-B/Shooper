@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter/foundation.dart';
 import '../providers/ProductProvider.dart';
 import '../providers/billItem.dart';
 import 'BillItemWidget.dart';
@@ -18,10 +18,13 @@ class _TestBillListState extends State<TestBillList> {
     List<BillItem> billItems = Provider.of<ProductProvider>(context).billItems;
 
     return Container(
-      height: 500,
+      height: MediaQuery.of(context).size.height - 300,
       child: ListView.builder(
         itemBuilder: (context, index) {
-          return BillItemWidget(billItems[index]);
+          return ChangeNotifierProvider.value(
+            value: billItems[index],
+            child: BillItemWidget(),
+          );
         },
         itemCount: billItems.length,
       ),
