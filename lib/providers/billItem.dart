@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-
+import 'package:flutter/material.dart';
 
 class BillItem with ChangeNotifier {
   String? id; //barcode result
@@ -24,5 +24,28 @@ class BillItem with ChangeNotifier {
   void decrementQuantity() {
     quantity = quantity! - 1;
     notifyListeners();
+  }
+}
+
+class BillItemWidget extends StatelessWidget {
+  late BillItem item;
+
+  BillItemWidget(BillItem billItem) {
+    this.item = billItem;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: ClipRRect(
+      child: Row(
+        children: [
+          Text(item.name as String),
+          Text(item.price as String),
+          Text(item.quantity as String),
+          Text(item.totalAmount as String),
+        ],
+      ),
+    ));
   }
 }
