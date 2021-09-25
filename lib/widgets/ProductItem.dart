@@ -4,6 +4,7 @@ import 'package:flutter/painting.dart';
 
 import 'package:provider/provider.dart';
 import '../providers/product.dart';
+import '../providers/ProductProvider.dart';
 
 class ProductItem extends StatefulWidget {
   const ProductItem({Key? key}) : super(key: key);
@@ -34,7 +35,15 @@ class _ProductItemState extends State<ProductItem> {
             mainAxisSize: MainAxisSize.max,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  if (product.quantity <= 1) {
+                    Provider.of<ProductProvider>(context, listen: false)
+                        .deleteProduct(product.id);
+                  } else {
+                    Provider.of<Product>(context, listen: false)
+                        .decrementQuantity();
+                  }
+                },
                 child: Icon(
                   Icons.remove_circle,
                   size: 25,
@@ -42,7 +51,9 @@ class _ProductItemState extends State<ProductItem> {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Provider.of<Product>(context,listen: false).incrementQuantity();
+                },
                 child: Icon(
                   Icons.add_circle,
                   size: 25,
@@ -60,7 +71,9 @@ class _ProductItemState extends State<ProductItem> {
                       child: Text(
                         prod.quantity.toString(),
                         style: TextStyle(
-                            fontSize: 10, fontWeight: FontWeight.bold,color: Colors.black),
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
                       ),
                     ),
                   ),

@@ -40,7 +40,8 @@ class _TabsScreenState extends State<TabsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_pages[_selectedPageIndex]['title'].toString()),
+        title: Text(_pages[_selectedPageIndex]['title'].toString(),),
+        centerTitle: true,
       ),
       body: _pages[_selectedPageIndex]['page'],
       bottomNavigationBar: BottomNavigationBar(

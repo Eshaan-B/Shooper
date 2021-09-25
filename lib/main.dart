@@ -7,6 +7,7 @@ import 'screens/shopInfo.dart';
 import 'screens/SplashScreen.dart';
 import 'screens/BillingScreen.dart';
 import 'screens/StockScreen.dart';
+import 'screens/AddProduct.dart';
 import 'screens/TabsScreen.dart';
 
 //TODO:for testing purpose
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
           TabsScreen.routeName: (ctx) => TabsScreen(),
           BillingScreen.routeName: (ctx) => BillingScreen(),
           StockScreen.routeName: (ctx) => StockScreen(),
+          AddProduct.routeName:(ctx)=>AddProduct(),
         },
       ),
     );

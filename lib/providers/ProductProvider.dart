@@ -4,20 +4,13 @@ import 'billItem.dart';
 import 'product.dart';
 
 class ProductProvider with ChangeNotifier {
-  List<Product> _productItems = [
-    Product(id: '000',price: 20,name: 'Biscuits',quantity: 55),
-    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
-    Product(id: '000',price: 20,name: 'Biscuits',quantity:2),
-    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
-    Product(id: '000',price: 20,name: 'Biscuits',quantity: 2),
-  ];
+  List<Product> _productItems = [];
   List<BillItem> _billItems = [
-    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
-    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
-    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
-    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
-    BillItem(id: '000',quantity: 2,name: 'Maggi',price: 10,totalAmount: 10),
-
+    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
+    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
+    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
+    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
+    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
   ];
 
   List<Product> get productItems {
@@ -34,9 +27,14 @@ class ProductProvider with ChangeNotifier {
     return _productItems.firstWhere((product) => product.id == id);
   }
 
-  void addProduct(String id, String name, double price, int quantity) {
+  void addProduct(
+      {required String id,
+      required String name,
+      required double price,
+      required int quantity}) {
     _productItems
         .add(Product(id: id, name: name, price: price, quantity: quantity));
+    notifyListeners();
   }
 
   void deleteProduct(String id) {
@@ -45,7 +43,6 @@ class ProductProvider with ChangeNotifier {
   }
 
   //####################  BILLING  ##############################
-
 
   void addBillItem(String id) {
     int _prodIndex = _productItems.indexWhere((element) => element.id == id);
@@ -65,25 +62,24 @@ class ProductProvider with ChangeNotifier {
       totalAmount: prod.price,
     ));
     prod.decrementQuantity();
-    if (prod.quantity! <= 0) _productItems.removeAt(_prodIndex);
+    if (prod.quantity <= 0) _productItems.removeAt(_prodIndex);
     notifyListeners();
   }
 
-  void removeBillItem(String id){
-    _billItems.removeWhere((element) => element.id==id);
+  void removeBillItem(String id) {
+    _billItems.removeWhere((element) => element.id == id);
     notifyListeners();
   }
 
-  void incrementBillItem(String id){
-    BillItem billItem=_billItems.firstWhere((element) => element.id==id);
-    int prodIndex=_productItems.indexWhere((element) => element.id==id);
+  void incrementBillItem(String id) {
+    BillItem billItem = _billItems.firstWhere((element) => element.id == id);
+    int prodIndex = _productItems.indexWhere((element) => element.id == id);
     //if products aren't available
-    if(prodIndex<=0){
+    if (prodIndex <= 0) {
       print("No more products left");
     }
     // if more such products are available
     billItem.incrementQuantity();
     _productItems[prodIndex].decrementQuantity();
   }
-
 }
