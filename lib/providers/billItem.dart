@@ -28,23 +28,43 @@ class BillItem with ChangeNotifier {
 }
 
 class BillItemWidget extends StatelessWidget {
-  late BillItem item;
-
-  BillItemWidget(BillItem billItem) {
-    this.item = billItem;
-  }
+  final BillItem item;
+  BillItemWidget(this.item);
 
   @override
   Widget build(BuildContext context) {
     return Container(
         child: ClipRRect(
-      child: Row(
-        children: [
-          Text(item.name as String),
-          Text(item.price as String),
-          Text(item.quantity as String),
-          Text(item.totalAmount as String),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                item.name as String,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Expanded(
+              child: Text(
+                (item.price as double).toString(),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Expanded(
+              child: Text(
+                (item.quantity as int).toString(),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            Expanded(
+              child: Text(
+                (item.totalAmount as double).toString(),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
       ),
     ));
   }
