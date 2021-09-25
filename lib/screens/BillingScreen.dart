@@ -18,6 +18,7 @@ class _BillingScreenState extends State<BillingScreen> {
   @override
   Widget build(BuildContext context) {
     var dropdownValue = 'Bill 1'; //Default not Hardcoded
+
     //use ListViewBuilder to render billItems
     //Dismissible option
     return Scaffold(
@@ -34,9 +35,10 @@ class _BillingScreenState extends State<BillingScreen> {
               color: Colors.deepPurpleAccent,
             ),
             onChanged: (String? newValue) {
+              print(newValue); //TODO: Works
               setState(() {
                 dropdownValue = newValue!;
-              });
+              }); //Dosent Work
             },
             items: <String>['Bill 1', 'Bill 2', 'Bill 3']
                 .map<DropdownMenuItem<String>>((String value) {
@@ -47,6 +49,9 @@ class _BillingScreenState extends State<BillingScreen> {
             }).toList(),
           ),
           Header(),
+          Container(
+            child: TestBillList(),
+          ),
         ],
       ),
       floatingActionButton: Stack(

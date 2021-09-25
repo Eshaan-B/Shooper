@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../providers/ProductProvider.dart';
 import '../providers/billItem.dart';
+import 'BillItemWidget.dart';
 import 'package:provider/provider.dart';
 
 class TestBillList extends StatefulWidget {
@@ -17,6 +18,7 @@ class _TestBillListState extends State<TestBillList> {
     List<BillItem> billItems = Provider.of<ProductProvider>(context).billItems;
 
     return Container(
+      height: 500,
       child: ListView.builder(
         itemBuilder: (context, index) {
           return BillItemWidget(billItems[index]);

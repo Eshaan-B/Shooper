@@ -35,8 +35,9 @@ class BillItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         child: ClipRRect(
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
+      borderRadius: BorderRadius.circular(5),
+      child: Card(
+        elevation: 4,
         child: Row(
           children: [
             Expanded(
