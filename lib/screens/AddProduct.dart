@@ -47,7 +47,14 @@ class _AddProductState extends State<AddProduct> {
   void addProduct() {
     if (isValid()) {
       //add product
+      Provider.of<ProductProvider>(context, listen: false).addProduct(
+        id: _barcodeResult,
+        quantity: int.parse(quantityController.text),
+        name: nameController.text,
+        price: double.parse(priceController.text),
+      );
       print("Added product");
+      Navigator.of(context).pop();
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content:
@@ -99,6 +106,7 @@ class _AddProductState extends State<AddProduct> {
                   Container(
                     width: 100,
                     child: TextField(
+                      keyboardType: TextInputType.number,
                       controller: quantityController,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
