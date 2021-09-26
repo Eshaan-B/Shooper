@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class HistoryPage extends StatefulWidget {
   const HistoryPage({Key? key}) : super(key: key);
+  static const routeName = '/historyPage';
 
   @override
   _HistoryPageState createState() => _HistoryPageState();
@@ -10,10 +11,6 @@ class HistoryPage extends StatefulWidget {
 class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Card(
-        child: Text("Hello"),
-      ),
-    );
+    return Scaffold();
   }
 }

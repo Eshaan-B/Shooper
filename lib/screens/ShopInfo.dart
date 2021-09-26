@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'history.dart';
+
 class User {
   final String userName;
   final String mobileNo;
@@ -104,7 +106,11 @@ class ShopInfoState extends State<ShopInfo> {
             SizedBox(
               height: 100,
             ),
-            ElevatedButton(onPressed: () {}, child: Text("View past orders"))
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.of(context).pushNamed(HistoryPage.routeName);
+            //     },
+            //     child: Text("View past orders"))
           ],
         ),
       ),
