@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -53,6 +54,19 @@ class _BillingScreenState extends State<BillingScreen> {
         children: [
           Header(),
           Container(child: TestBillList()),
+          Spacer(),
+          Container(
+            child: Text(
+              "Total: ₹${Provider.of<ProductProvider>(context, listen: false).getTotal()}",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
         ],
       ),
       floatingActionButton: Stack(

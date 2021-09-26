@@ -162,8 +162,16 @@ class ProductProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void submitOrder() {
+  double getTotal() {
     double total = 0;
+    _billItems.forEach((item) {
+      total += item.totalAmount;
+    });
+    return total;
+  }
+
+  void submitOrder() {
+    double total = getTotal();
     _billItems.forEach((item) {
       total += item.totalAmount;
     });

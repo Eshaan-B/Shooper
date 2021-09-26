@@ -21,7 +21,7 @@ class _ProductItemState extends State<ProductItem> {
       borderRadius: BorderRadius.circular(10),
       child: GridTile(
         child: Image.network(
-          'https://www.christinascucina.com/wp-content/uploads/2017/10/fullsizeoutput_6b2a-720x405.jpeg',
+          'https://cdn.hswstatic.com/gif/canned-food.jpg',
           fit: BoxFit.cover,
         ),
         footer: GridTileBar(
