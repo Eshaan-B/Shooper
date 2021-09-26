@@ -8,6 +8,11 @@ import 'product.dart';
 class ProductProvider with ChangeNotifier {
   List<Product> _productItems = [];
   List<BillItem> _billItems = [];
+  var history = [
+    {'time': '2021-09-26 23:04:38.168', 'total': 1200},
+    {'time': '2021-09-26 23:04:38.168', 'total': 1200},
+    {'time': '2021-09-26 23:04:38.168', 'total': 1200},
+  ];
 
   List<Product> get productItems {
     return [..._productItems];
@@ -139,5 +144,10 @@ class ProductProvider with ChangeNotifier {
   void submitOrder() {
     _billItems = [];
     notifyListeners();
+  }
+
+  //#################################History######################################
+  void addToHistory(String time, double total) {
+    history.insert(0, {'time': time, 'total': total});
   }
 }
