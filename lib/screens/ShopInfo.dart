@@ -52,7 +52,7 @@ class ShopInfoState extends State<ShopInfo> {
                 owner.userName,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 28,
+                  fontSize: 20,
                 ),
               ),
               margin: const EdgeInsets.all(28),
@@ -66,13 +66,13 @@ class ShopInfoState extends State<ShopInfo> {
                     'Mobile Number : ',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 15,
                     ),
                   ),
                   Text(
                     owner.mobileNo,
                     style: const TextStyle(
-                      fontSize: 18,
+                      fontSize: 15,
                     ),
                   ),
                 ],
@@ -87,13 +87,13 @@ class ShopInfoState extends State<ShopInfo> {
                     'Email Address   : ',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 20,
+                      fontSize: 15,
                     ),
                   ),
                   Text(
                     owner.email,
                     style: const TextStyle(
-                      fontSize: 18,
+                      fontSize: 15,
                     ),
                   ),
                 ],
@@ -101,6 +101,10 @@ class ShopInfoState extends State<ShopInfo> {
               alignment: Alignment.centerLeft,
               margin: const EdgeInsets.only(left: 28),
             ),
+            SizedBox(
+              height: 100,
+            ),
+            ElevatedButton(onPressed: () {}, child: Text("View past orders"))
           ],
         ),
       ),

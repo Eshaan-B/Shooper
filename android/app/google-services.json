@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "42569197765",
+    "project_id": "shooper-bc643",
+    "storage_bucket": "shooper-bc643.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42569197765:android:164432efbc43a6b278e8ac",
+        "android_client_info": {
+          "package_name": "com.example.shooper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42569197765-k63i2vneov5jcrabfif4nom5alcn1geg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGLobDlTzVcRFm6jAJTNkwzr4Z8Nr5CXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42569197765-k63i2vneov5jcrabfif4nom5alcn1geg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
