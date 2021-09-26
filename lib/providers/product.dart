@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Product with ChangeNotifier {
   String id; // qr code
@@ -14,11 +15,20 @@ class Product with ChangeNotifier {
   });
 
   void incrementQuantity() {
+    FirebaseFirestore.instance
+        .collection('products')
+        .doc(this.id)
+        .update({'quantity': this.quantity + 1});
     quantity = quantity + 1;
+
     notifyListeners();
   }
 
   void decrementQuantity() {
+    FirebaseFirestore.instance
+        .collection('products')
+        .doc(this.id)
+        .update({'quantity': this.quantity - 1});
     quantity = quantity - 1;
     notifyListeners();
   }

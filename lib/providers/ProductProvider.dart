@@ -1,22 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'billItem.dart';
 import 'product.dart';
 
 class ProductProvider with ChangeNotifier {
   List<Product> _productItems = [];
-  List<BillItem> _billItems = [
-    BillItem(
-        id: '000',
-        quantity: 2,
-        name: 'Maggi with a long name',
-        price: 10,
-        totalAmount: 10),
-    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
-    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
-    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
-    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
-  ];
+  List<BillItem> _billItems = [];
 
   List<Product> get productItems {
     return [..._productItems];
@@ -32,13 +23,67 @@ class ProductProvider with ChangeNotifier {
     return _productItems.firstWhere((product) => product.id == id);
   }
 
+  Future<void> fetchProducts() async {
+    //set _ProductItems;
+    List<Product> _tempProducts = _productItems;
+    _productItems = [];
+    try {
+      await FirebaseFirestore.instance
+          .collection('products')
+          .get()
+          .then((data) {
+        data.docs.forEach((document) {
+          _productItems.add(
+            Product(
+              id: document['id'],
+              name: document['name'],
+              price: document['price'],
+              quantity: document['quantity'],
+            ),
+          );
+        });
+      }).catchError((err) => throw err);
+
+      print("fetching complete");
+    } catch (err) {
+      _productItems = _tempProducts;
+      print("Error in fetching!!");
+      print(err);
+      throw err;
+    }
+    notifyListeners();
+  }
+
   void addProduct(
       {required String id,
       required String name,
       required double price,
-      required int quantity}) {
-    _productItems
-        .add(Product(id: id, name: name, price: price, quantity: quantity));
+      required int quantity}) async {
+    int _prodIndex = _productItems.indexWhere((element) => element.id == id);
+    //if product already exists
+    if (_prodIndex >= 0) {
+      FirebaseFirestore.instance
+          .collection('products')
+          .doc(id)
+          .update({'quantity': _productItems[_prodIndex].quantity + quantity});
+      _productItems[_prodIndex].quantity += quantity;
+      return;
+    }
+    Product prod =
+        Product(id: id, name: name, price: price, quantity: quantity);
+    try {
+      await FirebaseFirestore.instance.collection('products').doc(id).set({
+        'id': id,
+        'name': name,
+        'price': price,
+        'quantity': quantity,
+      });
+      _productItems.add(prod);
+      print("Product successfully added");
+    } catch (err) {
+      print(err);
+    }
+
     notifyListeners();
   }
 

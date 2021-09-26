@@ -14,8 +14,6 @@ class _UserScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 3),
-        () => Navigator.of(context).pushReplacementNamed(TabsScreen.routeName));
   }
 
   @override
