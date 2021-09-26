@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shooper/providers/ProductProvider.dart';
 
 class BillItem with ChangeNotifier {
   String id; //barcode result
@@ -16,14 +18,20 @@ class BillItem with ChangeNotifier {
     required this.totalAmount,
   });
 
+  void getTotal() {
+    this.totalAmount = this.price * this.quantity;
+    notifyListeners();
+  }
+
   void incrementQuantity() {
     quantity = quantity + 1;
+    getTotal();
     notifyListeners();
   }
 
   void decrementQuantity() {
     quantity = quantity - 1;
+    getTotal();
     notifyListeners();
   }
 }
-

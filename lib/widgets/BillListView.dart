@@ -42,7 +42,13 @@ class _TestBillListState extends State<TestBillList> {
                     ),
                     key: ValueKey('Delete'),
                     onDismissed: (direction) {
-                      data.removeBillItem(index);
+                      for (int i = Provider.of<ProductProvider>(context)
+                              .billItems[index]
+                              .quantity;
+                          i > 0;
+                          i--)
+                        Provider.of<ProductProvider>(context, listen: false)
+                            .decrementBillItem(bill[index]);
                     },
                   ),
                 );

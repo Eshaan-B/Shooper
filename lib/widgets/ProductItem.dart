@@ -38,7 +38,7 @@ class _ProductItemState extends State<ProductItem> {
                 onTap: () {
                   if (product.quantity <= 1) {
                     Provider.of<ProductProvider>(context, listen: false)
-                        .deleteProduct(product.id);
+                        .deleteProduct(product);
                   } else {
                     Provider.of<Product>(context, listen: false)
                         .decrementQuantity();
@@ -52,7 +52,8 @@ class _ProductItemState extends State<ProductItem> {
               ),
               GestureDetector(
                 onTap: () {
-                  Provider.of<Product>(context,listen: false).incrementQuantity();
+                  Provider.of<Product>(context, listen: false)
+                      .incrementQuantity();
                 },
                 child: Icon(
                   Icons.add_circle,
