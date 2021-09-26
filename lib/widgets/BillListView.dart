@@ -4,29 +4,33 @@ import '../providers/ProductProvider.dart';
 import '../providers/billItem.dart';
 import 'BillItemWidget.dart';
 import 'package:provider/provider.dart';
+import '../providers/bill.dart';
 
 class TestBillList extends StatefulWidget {
-  const TestBillList({Key? key}) : super(key: key);
-
+  Bill currbill;
+  TestBillList(this.currbill, {Key? key}) : super(key: key);
   @override
-  _TestBillListState createState() => _TestBillListState();
+  _TestBillListState createState() => _TestBillListState(currbill);
 }
 
 class _TestBillListState extends State<TestBillList> {
+  Bill currBill;
+  _TestBillListState(this.currBill); //Default Bill
+
   @override
   Widget build(BuildContext context) {
-    List<BillItem> billItems = Provider.of<ProductProvider>(context).billItems;
-
+    currBill.billItems = Provider.of<ProductProvider>(context).billItems;
+    print(currBill.billItems);
     return Container(
       height: MediaQuery.of(context).size.height - 300,
       child: ListView.builder(
         itemBuilder: (context, index) {
           return ChangeNotifierProvider.value(
-            value: billItems[index],
+            value: currBill.billItems[index],
             child: BillItemWidget(),
           );
         },
-        itemCount: billItems.length,
+        itemCount: currBill.billItems.length,
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import 'billItem.dart';
 import 'product.dart';
+import 'bill.dart';
 
 class ProductProvider with ChangeNotifier {
   List<Product> _productItems = [];
@@ -49,7 +50,7 @@ class ProductProvider with ChangeNotifier {
 
   //####################  BILLING  ##############################
 
-  void addBillItem(String id) {
+  void addBillItem(String id, Bill) {
     int _prodIndex = _productItems.indexWhere((element) => element.id == id);
     //if product is not available
     if (_prodIndex < 0) {
