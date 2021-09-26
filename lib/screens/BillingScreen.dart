@@ -7,10 +7,6 @@ import '../providers/bill.dart';
 import '../widgets/bill-header.dart';
 import '../providers/billItem.dart';
 
-var bill1 = Bill('Bill 1');
-var bill2 = Bill('Bill 2');
-var bill3 = Bill('Bill 3');
-
 class BillingScreen extends StatefulWidget {
   const BillingScreen({Key? key}) : super(key: key);
   static const routeName = '/billingScreen';
@@ -20,11 +16,13 @@ class BillingScreen extends StatefulWidget {
 }
 
 class _BillingScreenState extends State<BillingScreen> {
-  //Making Bills in state:
-  var currBill = getBillByID('Bill 1');
-
   @override
   Widget build(BuildContext context) {
+    //Making Bills in state:
+
+    var currBill =
+        Provider.of<ProductProvider>(context, listen: false).billsList[0];
+
     return Scaffold(
       body: Column(
         children: [

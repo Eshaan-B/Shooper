@@ -1,6 +1,7 @@
 import './billItem.dart';
+import 'package:flutter/foundation.dart';
 
-class Bill {
+class Bill with ChangeNotifier {
   String billNumber;
   List<BillItem> billItems = [];
 
@@ -9,21 +10,11 @@ class Bill {
   void appendBillItem(BillItem item) {
     print('Adding');
     billItems.insert(0, item);
+    notifyListeners();
   }
 
   void sell() {
     //TODO: ADD Code to make a sale
     billItems = [];
-  }
-}
-
-Bill getBillByID(String billID) {
-  switch (billID) {
-    case 'Bill 2':
-      return bill2;
-    case 'Bill 3':
-      return bill3;
-    default:
-      return bill1;
   }
 }
