@@ -70,7 +70,7 @@ class _BillingScreenState extends State<BillingScreen> {
                       totalAmount: 10))
                 },
                 child: const Icon(Icons.add),
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.orangeAccent,
               ),
             ),
           ),
@@ -80,7 +80,7 @@ class _BillingScreenState extends State<BillingScreen> {
               heroTag: 'PlaceOrder',
               onPressed: () => {currBill.sell()},
               child: const Icon(Icons.shopping_cart),
-              backgroundColor: Colors.green,
+              backgroundColor: Colors.orangeAccent,
             ),
           ),
         ],

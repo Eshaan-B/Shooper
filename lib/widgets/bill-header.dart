@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -11,24 +12,28 @@ class Header extends StatelessWidget {
             child: Text(
               'Name',
               textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
             child: Text(
               'Price',
               textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
             child: Text(
               'Quantity',
               textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
           Expanded(
             child: Text(
               'Total',
               textAlign: TextAlign.center,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
           ),
         ],
