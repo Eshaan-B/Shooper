@@ -1,16 +1,17 @@
-# shooper
+## SHOOPER-APP
 
-A new Flutter project.
+Its been 30 Years of Barcode use in Business through UPC (Universal Product Code), 
+and no significant changes have been seen in the industry.
+People still use a PC and a software, along with Laser Barcode Scanner, or fancy cameras 
+if they want to set up their business digitally.
+That is people who can afford these or have an absolute need for it.
+Small Business owners who would suffer loss if they start paying for the set-up
+are never offered a digital helping hand.
 
-## Getting Started
+In this era of Mobile phones when a small screen in our hand has the processing power to achieve virtually anything.
+We present we present "Shooper" App. This is designed to be simple and smooth.
+This easy to learn and navigate application, helps shopkeepers to manage Stock and cover billing all in one app.
+This app is specifically designed for Small Business Owners of India. 
+It is an initiative toward Hon' Prime Minister's Aatma Nirbhar Bhaarat Yojna.
+Through this app we hope to provide power to Small and independent Shop Owners of India.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
