@@ -11,17 +11,6 @@ var bill1 = Bill('Bill 1');
 var bill2 = Bill('Bill 2');
 var bill3 = Bill('Bill 3');
 
-Bill getBillByID(String billID) {
-  switch (billID) {
-    case 'Bill 2':
-      return bill2;
-    case 'Bill 3':
-      return bill3;
-    default:
-      return bill1;
-  }
-}
-
 class BillingScreen extends StatefulWidget {
   const BillingScreen({Key? key}) : super(key: key);
   static const routeName = '/billingScreen';
