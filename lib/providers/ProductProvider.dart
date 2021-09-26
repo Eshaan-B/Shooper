@@ -2,11 +2,18 @@ import 'package:flutter/foundation.dart';
 
 import 'billItem.dart';
 import 'product.dart';
+import 'bill.dart';
 
 class ProductProvider with ChangeNotifier {
+  List<Bill> billsList = [Bill('Bill 1'), Bill('Bill 2'), Bill('Bill 3')];
   List<Product> _productItems = [];
   List<BillItem> _billItems = [
-    BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
+    BillItem(
+        id: '000',
+        quantity: 2,
+        name: 'Maggi with a long name',
+        price: 10,
+        totalAmount: 10),
     BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
     BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
     BillItem(id: '000', quantity: 2, name: 'Maggi', price: 10, totalAmount: 10),
@@ -44,7 +51,7 @@ class ProductProvider with ChangeNotifier {
 
   //####################  BILLING  ##############################
 
-  void addBillItem(String id) {
+  void addBillItem(String id, String billId) {
     int _prodIndex = _productItems.indexWhere((element) => element.id == id);
     //if product is not available
     if (_prodIndex < 0) {
@@ -54,13 +61,16 @@ class ProductProvider with ChangeNotifier {
 
     //if product is available
     Product prod = _productItems[_prodIndex];
-    _billItems.add(BillItem(
+    final item = BillItem(
       id: id,
       price: prod.price,
       name: prod.name,
       quantity: 1,
       totalAmount: prod.price,
-    ));
+    );
+    _billItems.add(item);
+    //TODO :here
+    billsList.firstWhere((element) => element.billNumber == billId);
     prod.decrementQuantity();
     if (prod.quantity <= 0) _productItems.removeAt(_prodIndex);
     notifyListeners();
