@@ -33,7 +33,7 @@ class _BillingScreenState extends State<BillingScreen> {
               alignment: Alignment.bottomLeft,
               child: FloatingActionButton(
                 heroTag: 'AddBillItem',
-                onPressed: () => data.addBillItem('000', 1),
+                onPressed: () => data.addBillItem('8901012111048', 1),
                 child: const Icon(Icons.add),
                 backgroundColor: Colors.orangeAccent,
               ),
