@@ -21,7 +21,7 @@ class _ProductItemState extends State<ProductItem> {
       borderRadius: BorderRadius.circular(10),
       child: GridTile(
         child: Image.network(
-          'https://www.christinascucina.com/wp-content/uploads/2017/10/fullsizeoutput_6b2a-720x405.jpeg',
+          'https://cdn.hswstatic.com/gif/canned-food.jpg',
           fit: BoxFit.cover,
         ),
         footer: GridTileBar(
@@ -38,7 +38,7 @@ class _ProductItemState extends State<ProductItem> {
                 onTap: () {
                   if (product.quantity <= 1) {
                     Provider.of<ProductProvider>(context, listen: false)
-                        .deleteProduct(product.id);
+                        .deleteProduct(product);
                   } else {
                     Provider.of<Product>(context, listen: false)
                         .decrementQuantity();
@@ -52,7 +52,8 @@ class _ProductItemState extends State<ProductItem> {
               ),
               GestureDetector(
                 onTap: () {
-                  Provider.of<Product>(context,listen: false).incrementQuantity();
+                  Provider.of<Product>(context, listen: false)
+                      .incrementQuantity();
                 },
                 child: Icon(
                   Icons.add_circle,

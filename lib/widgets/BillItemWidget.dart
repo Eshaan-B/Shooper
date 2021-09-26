@@ -36,7 +36,8 @@ class BillItemWidget extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        //TODO: Decrement item
+                        Provider.of<ProductProvider>(context, listen: false)
+                            .decrementBillItem(item);
                       },
                       child: Icon(
                         Icons.remove_circle,
@@ -52,7 +53,17 @@ class BillItemWidget extends StatelessWidget {
                     Spacer(),
                     GestureDetector(
                       onTap: () {
-                        //TODO: Increment item
+                        if (Provider.of<ProductProvider>(context, listen: false)
+                                .productItems
+                                .indexWhere(
+                                    (element) => element.id == item.id) <
+                            0) {
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("No more of this products left"),
+                          ));
+                        }
+                        Provider.of<ProductProvider>(context, listen: false)
+                            .incrementBillItem(item);
                       },
                       child: Icon(
                         Icons.add_circle,
