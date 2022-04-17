@@ -15,6 +15,9 @@ This app is specifically designed for Small Business Owners of India.
 It is an initiative toward Hon' Prime Minister's Aatma Nirbhar Bhaarat Yojna.
 Through this app we hope to provide power to Small and independent Shop Owners of India.
 
+This app scans barcodes of products and can easily manage the shop items for you.
+It has buy/sell functionalities that automatically adds and deducts the products from the item list
+
 ## Technologies used:
 - Flutter
 - Firebase
