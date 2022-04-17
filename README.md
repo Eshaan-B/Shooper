@@ -1,4 +1,4 @@
-## SHOOPER-APP
+# SHOOPER-APP
 
 Its been 30 Years of Barcode use in Business through UPC (Universal Product Code), 
 and no significant changes have been seen in the industry.
@@ -15,7 +15,11 @@ This app is specifically designed for Small Business Owners of India.
 It is an initiative toward Hon' Prime Minister's Aatma Nirbhar Bhaarat Yojna.
 Through this app we hope to provide power to Small and independent Shop Owners of India.
 
-# Video Demo: 
+## Technologies used:
+- Flutter
+- Firebase
+
+### Video Demo: 
 
 
 https://user-images.githubusercontent.com/55873406/163705679-5634b4bc-4389-4286-8c74-fd79ddea640b.mp4
