@@ -1,4 +1,4 @@
-# SHOOPER-APP
+# Shooper
 
 Its been 30 Years of Barcode use in Business through UPC (Universal Product Code), 
 and no significant changes have been seen in the industry.
